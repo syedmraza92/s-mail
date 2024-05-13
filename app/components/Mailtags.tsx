@@ -39,7 +39,9 @@ const SideBar = ({ logo, title }: SideBarProps) => {
   );
 };
 const Mailtags = () => {
-  const listOfSideBar = SideBarData.map((sidebar) => <SideBar {...sidebar} />);
+  const listOfSideBar = SideBarData.map((sidebar, index) => (
+    <SideBar key={index} {...sidebar} />
+  ));
   return <div>{listOfSideBar}</div>;
 };
 
