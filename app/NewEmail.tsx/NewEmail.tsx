@@ -1,3 +1,4 @@
+"use client"
 import CloseIcon from "@mui/icons-material/Close";
 import { useDispatch, useSelector } from "react-redux";
 import { closeNewMail } from "../state/action-creators";

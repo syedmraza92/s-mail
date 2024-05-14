@@ -1,5 +1,18 @@
-import { applyMiddleware, createStore } from "redux";
-import reducer from "./reducer";
-import { thunk } from "redux-thunk";
+"use client"
+import { createStore, combineReducers } from 'redux';
+import emailReducer, { EmailState } from '../GlobalRedux/reducer';
+import newMailReducer from './reducer/toggleReducer';
 
-export const store = createStore(reducer, {}, applyMiddleware (thunk));
+export interface RootState {
+  emails: EmailState;
+}
+
+const rootReducer = combineReducers({
+  emails: emailReducer,
+  newMail: newMailReducer,
+});
+
+const store = createStore(rootReducer);
+
+export default store;
+

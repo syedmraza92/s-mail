@@ -1,3 +1,4 @@
+"use client"
 export const openNewMail = () => ({
   type: "OPEN_NEW_MAIL",
 });

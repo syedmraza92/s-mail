@@ -1,3 +1,4 @@
+"use client"
 import { useDispatch, useSelector } from "react-redux";
 import { openNewMail } from "../state/action-creators";
 import NewMail from "../NewEmail.tsx/NewEmail";
@@ -6,7 +7,7 @@ import { useState } from "react";
 function ComposeButton() {
   const [isComposeClicked, setIsComposeClicked] = useState(false);
   const dispatch = useDispatch();
-  const newMailIsOpen = useSelector((state: any) => state.newMail.isOpen);
+  const newMailIsOpen = useSelector((state: any) => state.newMail && state.newMail.isOpen);
 
   const handleComposeClick = () => {
     dispatch(openNewMail()); 
